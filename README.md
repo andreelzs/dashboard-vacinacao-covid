@@ -15,7 +15,7 @@ Análise de uma base simulada com 8 municípios do Sudeste (2021 a 2024) para ve
 
 ## Estrutura
 
-- `notebooks/analise_vacinacao_covid.ipynb`: notebook com a análise completa (Google Colab)
+- `notebooks/analise_vacinacao_covid.ipynb`: notebook com a análise completa
 - `app.py`: dashboard em Streamlit
 - `index.html`: página do GitHub Pages
 - `data/`: cópia da base, usada se o GitHub do professor estiver fora do ar
@@ -23,7 +23,7 @@ Análise de uma base simulada com 8 municípios do Sudeste (2021 a 2024) para ve
 
 ## Tecnologias
 
-Python, Pandas, NumPy, Matplotlib, Seaborn, Plotly, Streamlit, Google Colab e GitHub Pages.
+Python, Pandas, NumPy, Matplotlib, Seaborn, Plotly, Streamlit e GitHub Pages.
 
 ## Rodar o dashboard no computador
 
