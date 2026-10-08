@@ -36,7 +36,7 @@
     .btn.vazado:hover { background: rgba(255,255,255,0.14); }
 
     /* numeros sobrepostos ao topo */
-    .numeros { margin-top: -56px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .numeros { margin-top: -56px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
     .numero { background: #fff; border-radius: 14px; padding: 18px 16px; box-shadow: 0 6px 20px rgba(46, 26, 86, 0.12); text-align: center; }
     .numero strong { display: block; font-size: 1.9rem; color: var(--roxo); line-height: 1.1; }
     .numero span { font-size: 0.82rem; color: var(--suave); display: block; margin-top: 6px; line-height: 1.35; }
@@ -72,7 +72,7 @@
     footer { text-align: center; font-size: 0.85rem; color: var(--suave); padding: 22px 18px 40px; }
 
     @media (max-width: 760px) {
-      .numeros { grid-template-columns: 1fr 1fr; }
+      .numeros { grid-template-columns: 1fr; }
       .grade { grid-template-columns: 1fr; }
       .passos { grid-template-columns: 1fr; }
       header { padding-bottom: 84px; }
@@ -85,7 +85,7 @@
     <div class="wrap">
       <span class="selo">Linguagens de Programação · Projeto G1</span>
       <h1>Vacinação contra a COVID-19 e as <em>internações</em></h1>
-      <p>Quem vacinou mais, internou menos? Análise de 8 municípios do Sudeste entre 2021 e 2024.</p>
+      <p>Quem vacinou mais, internou menos?</p>
       <p class="autor">André Luiz dos Santos Ferreira · Prof. Alexandre Louzada</p>
       <div class="botoes">
         <a class="btn verde" data-link="dashboard" target="_blank" rel="noopener">Acessar o dashboard</a>
@@ -96,81 +96,32 @@
 
   <div class="wrap">
     <section class="numeros" aria-label="Resultados em números">
-      <div class="numero"><strong>−0,13</strong><span>correlação com todos os registros</span></div>
-      <div class="numero"><strong>−0,36</strong><span>correlação sem cobertura acima de 100%</span></div>
+      <div class="numero"><strong>−0,36</strong><span>correlação entre cobertura e internações</span></div>
       <div class="numero"><strong>−30%</strong><span>internações em 2022 frente a 2021</span></div>
-      <div class="numero"><strong>5 de 8</strong><span>municípios com correlação negativa, como esperado</span></div>
+      <div class="numero"><strong>8</strong><span>municípios, de 2021 a 2024</span></div>
     </section>
 
     <main>
-      <div class="grade">
-        <section class="bloco">
-          <h2>O que eu quis descobrir</h2>
-          <p>Municípios e anos com maior cobertura vacinal tiveram menos internações por COVID-19?</p>
-          <ul>
-            <li>Como os dois indicadores evoluíram de 2021 a 2024</li>
-            <li>Se a relação vale para todos os municípios</li>
-            <li>O efeito dos registros com cobertura acima de 100%</li>
-          </ul>
-        </section>
-
-        <section class="bloco verde">
-          <h2>Indicadores</h2>
-          <ul>
-            <li><b>Internações por 100 mil hab.</b>: internações ÷ população × 100.000</li>
-            <li><b>Cobertura vacinal</b>: vacinados ÷ população × 100</li>
-            <li><b>Pearson e Spearman</b>: medem se os dois andam juntos</li>
-          </ul>
-        </section>
-
-        <section class="bloco largo">
-          <h2>Como foi feito</h2>
-          <ol class="passos">
-            <li>Leitura da base do repositório do professor</li>
-            <li>Limpeza e criação dos indicadores com Pandas</li>
-            <li>Gráficos e correlações no notebook</li>
-            <li>Dashboard interativo em Streamlit</li>
-            <li>Código e documentação no GitHub</li>
-            <li>Esta página no GitHub Pages</li>
-          </ol>
-          <div class="pilulas">
-            <span>Python</span><span>Pandas</span><span>NumPy</span><span>Matplotlib</span><span>Seaborn</span><span>Plotly</span><span>Streamlit</span><span>GitHub Pages</span>
-          </div>
-        </section>
-
-        <section class="bloco largo">
-          <h2>O que encontrei</h2>
-          <ul>
-            <li>Com todos os registros a relação é fraca. Sem os registros com mais vacinados do que habitantes, ela passa a moderada.</li>
-            <li>2022 teve a maior cobertura média (cerca de 90%) e as internações caíram cerca de 30% em relação a 2021.</li>
-            <li>Na faixa de 60% a 80% de cobertura a média foi de 381 internações por 100 mil, contra 603 na faixa de até 60%.</li>
-            <li>Vitória e Serra foram no sentido contrário: mais internações nos anos de mais vacinação.</li>
-          </ul>
-        </section>
-      </div>
+      <section class="bloco largo" style="margin-bottom:18px">
+        <h2>Sobre o projeto</h2>
+        <p>Análise de uma base simulada para ver se os municípios com mais vacinação tiveram menos internações por COVID-19. O resultado é uma tendência moderada, que não prova causa e efeito.</p>
+        <div class="pilulas">
+          <span>Python</span><span>Pandas</span><span>NumPy</span><span>Matplotlib</span><span>Seaborn</span><span>Plotly</span><span>Streamlit</span><span>GitHub Pages</span>
+        </div>
+      </section>
 
       <section class="painel">
         <div>
           <h2>Dashboard interativo</h2>
-          <p>Filtros por município e ano, indicadores, gráficos com mouse, mapa de calor e tabela.</p>
-          <small>Se o app estiver dormindo, clique no botão do aviso e espere alguns segundos.</small>
+          <p>Filtros por município e ano, gráficos e tabela.</p>
         </div>
         <a class="btn" data-link="dashboard" target="_blank" rel="noopener">Abrir o dashboard</a>
-      </section>
-
-      <section class="bloco conclusao largo" style="margin-bottom:18px">
-        <h2>Conclusão</h2>
-        <p>
-          Há uma tendência de menos internações onde a cobertura foi maior, mas ela é moderada, não vale para todos os
-          municípios e não prova causa e efeito. A base é simulada e tem só 32 observações.
-        </p>
-        <p>Recomendação: manter a cobertura acima de 60% e corrigir os registros inconsistentes antes de decidir por município.</p>
       </section>
 
       <section class="bloco largo">
         <h2>Arquivos</h2>
         <ul>
-          <li><a data-link="readme" target="_blank" rel="noopener">README do projeto</a></li>
+          <li><a data-link="readme" target="_blank" rel="noopener">README</a></li>
           <li><a data-link="notebook" target="_blank" rel="noopener">Notebook da análise</a></li>
           <li><a data-link="repo" target="_blank" rel="noopener">Repositório no GitHub</a></li>
         </ul>
@@ -180,7 +131,7 @@
 
   <footer>
     André Luiz dos Santos Ferreira · Linguagens de Programação · Prof. Alexandre Louzada<br>
-    Dados: repositório Dados-Simulados do professor (base simulada).
+    Base simulada do repositório do professor.
   </footer>
 
   <script>
