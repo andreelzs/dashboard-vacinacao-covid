@@ -60,7 +60,11 @@ def ler_upload(arquivo):
 def correlacao(d, metodo="pearson"):
     if len(d) < 3:
         return np.nan
-    return d["cobertura"].corr(d["internacoes_100k"], method=metodo)
+    x, y = d["cobertura"], d["internacoes_100k"]
+    if metodo == "spearman":
+        # Spearman = Pearson sobre os rankings (evita depender do scipy)
+        x, y = x.rank(), y.rank()
+    return x.corr(y)
 
 
 def fmt(x, casas=2):
