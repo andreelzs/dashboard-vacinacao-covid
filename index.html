@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Projeto acadêmico de análise e visualização de dados sobre vacinação contra COVID-19 e internações por município.">
+  <title>Vacinação COVID-19 e Internações | Projeto G1</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: "Segoe UI", Arial, Helvetica, sans-serif; color: #1f2933; background: #eef2f6; line-height: 1.6; }
+    header { background: linear-gradient(135deg, #0b3c49 0%, #0f6b78 100%); color: #fff; text-align: center; padding: 48px 20px 40px; }
+    header h1 { margin: 0 0 8px; font-size: 2rem; }
+    header .sub { margin: 0 0 18px; opacity: 0.9; }
+    header .autor { margin: 0; font-size: 0.9rem; opacity: 0.9; }
+    header .autor strong { display: block; font-size: 0.95rem; }
+    main { max-width: 900px; margin: 0 auto; padding: 24px 16px 40px; }
+    section { background: #fff; border-radius: 10px; padding: 22px 24px; margin-bottom: 20px; box-shadow: 0 2px 10px rgba(15, 40, 60, 0.07); }
+    h2 { margin: 0 0 12px; font-size: 1.2rem; color: #0f6b78; }
+    p { margin: 0 0 10px; }
+    ul { margin: 0; padding-left: 20px; }
+    li { margin-bottom: 4px; }
+    .grade { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 10px; }
+    .item { background: #f4f8fa; border: 1px solid #dde6ec; border-left: 4px solid #0f6b78; border-radius: 6px; padding: 10px 12px; font-size: 0.92rem; }
+    .item b { display: block; }
+    .botoes { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
+    .botoes a { text-decoration: none; padding: 10px 16px; border-radius: 6px; font-weight: 600; font-size: 0.92rem;
+                background: #fff; color: #1f2933; border: 1px solid #cfd8df; }
+    .botoes a.principal { background: #0f6b78; color: #fff; border-color: #0f6b78; }
+    .botoes a:hover { filter: brightness(0.95); }
+    .destaque { background: #e6f2f4; border-radius: 6px; padding: 12px 14px; }
+    #aviso { display: none; background: #fff3cd; border: 1px solid #e0c97a; border-radius: 6px; padding: 10px 14px; margin-bottom: 20px; font-size: 0.9rem; }
+    footer { text-align: center; font-size: 0.85rem; color: #5b6b78; padding: 8px 16px 32px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Vacinação contra COVID-19 e Internações</h1>
+    <p class="sub">Projeto de análise e visualização de dados com Python</p>
+    <p class="autor">
+      <strong>André Luiz dos Santos Ferreira</strong>
+      Linguagens de Programação<br>
+      Professor: Alexandre Louzada
+    </p>
+  </header>
+
+  <main>
+    <div id="aviso">Os links desta página ainda não foram preenchidos. Edite as quatro linhas no começo do script no final do arquivo.</div>
+
+    <section>
+      <h2>Sobre o projeto</h2>
+      <p>
+        Este projeto analisa uma base simulada com 8 municípios do Sudeste entre 2021 e 2024
+        para verificar se a vacinação contra a COVID-19 teve relação com a redução das internações.
+      </p>
+      <p>
+        O trabalho reúne a preparação dos dados, a análise exploratória, os indicadores e um dashboard
+        interativo para consultar os resultados.
+      </p>
+    </section>
+
+    <section>
+      <h2>Pergunta analisada</h2>
+      <ul>
+        <li>Municípios e anos com maior cobertura vacinal tiveram menos internações por COVID-19?</li>
+        <li>Como a cobertura e as internações evoluíram de 2021 a 2024?</li>
+        <li>A relação aparece em todos os municípios ou só em alguns?</li>
+        <li>Os registros com cobertura acima de 100% mudam o resultado?</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Indicadores acompanhados</h2>
+      <div class="grade">
+        <div class="item"><b>Internações por 100 mil hab.</b>Indicador principal: internações ÷ população × 100.000.</div>
+        <div class="item"><b>Cobertura vacinal (%)</b>Vacinados ÷ população × 100.</div>
+        <div class="item"><b>Correlação</b>Pearson e Spearman entre cobertura e internações.</div>
+        <div class="item"><b>Faixas de cobertura</b>Até 60%, de 60% a 80% e acima de 80%.</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Principais resultados</h2>
+      <ul>
+        <li>Com todos os registros a correlação é fraca (Pearson −0,13).</li>
+        <li>Sem os 7 registros com cobertura acima de 100%, ela é moderada (Pearson −0,36 e Spearman −0,45).</li>
+        <li>2022 teve a maior cobertura média (cerca de 90%) e as internações caíram cerca de 30% em relação a 2021.</li>
+        <li>Vitória e Serra vão no sentido contrário: nos anos de mais vacinação tiveram mais internações.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Tecnologias utilizadas</h2>
+      <div class="grade">
+        <div class="item">Python</div>
+        <div class="item">Pandas e NumPy</div>
+        <div class="item">Matplotlib e Seaborn</div>
+        <div class="item">Plotly</div>
+        <div class="item">Streamlit</div>
+        <div class="item">Google Colab</div>
+        <div class="item">GitHub Pages</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Arquivos e análise</h2>
+      <p>Consulte a documentação, explore o notebook ou abra-o diretamente no Google Colab.</p>
+      <div class="botoes">
+        <a id="l-readme" class="principal" target="_blank" rel="noopener">Ver README</a>
+        <a id="l-notebook" target="_blank" rel="noopener">Ver notebook no GitHub</a>
+        <a id="l-colab" target="_blank" rel="noopener">Abrir notebook no Google Colab</a>
+        <a id="l-dados" target="_blank" rel="noopener">Ver base de dados</a>
+      </div>
+    </section>
+
+    <section>
+      <h2>Dashboard interativo</h2>
+      <p>O dashboard permite explorar os dados com filtros, indicadores, tabelas e gráficos interativos.</p>
+      <div class="botoes">
+        <a id="l-dashboard" class="principal" target="_blank" rel="noopener">Acessar dashboard</a>
+        <a id="l-repo" target="_blank" rel="noopener">Repositório no GitHub</a>
+      </div>
+      <p style="margin-top:12px; font-size:0.85rem; color:#5b6b78;">
+        Se o dashboard estiver "dormindo", clique no botão para acordá-lo e aguarde alguns segundos.
+      </p>
+    </section>
+
+    <section>
+      <h2>Conclusão</h2>
+      <p class="destaque">
+        Existe uma tendência de menos internações onde a cobertura vacinal foi maior, mas ela é moderada,
+        não aparece em todos os municípios e não prova que a vacina seja a causa. A base é simulada e tem
+        apenas 32 observações. A recomendação é manter a cobertura acima de 60% e corrigir os registros
+        com mais vacinados do que habitantes antes de decidir por município.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    André Luiz dos Santos Ferreira · Linguagens de Programação · Prof. Alexandre Louzada<br>
+    Dados: repositório Dados-Simulados do professor (base simulada).
+  </footer>
+
+  <script>
+    // trocar pelos dados reais depois de publicar
+    const USUARIO = "andreelzs";
+    const REPOSITORIO = "dashboard-vacinacao-covid";
+    const STREAMLIT_URL = "https://vacinacao-covid-andre.streamlit.app";
+    const COLAB_URL = "https://colab.research.google.com/drive/1LyoqCXLsoBZ_3u3KssQ9X3wiWdnDXVv5";
+
+    const repo = "https://github.com/" + USUARIO + "/" + REPOSITORIO;
+    const links = {
+      "l-readme": repo + "/blob/main/README.md",
+      "l-notebook": repo + "/blob/main/notebooks/analise_vacinacao_covid.ipynb",
+      "l-colab": COLAB_URL,
+      "l-dados": repo + "/blob/main/data/Simulacao_Vacinacao_COVID_Municipios_2021_2024.xlsx",
+      "l-dashboard": STREAMLIT_URL,
+      "l-repo": repo
+    };
+    for (const id in links) document.getElementById(id).href = links[id];
+
+    if (USUARIO.includes("SEU_") || STREAMLIT_URL.includes("SEU-")) {
+      document.getElementById("aviso").style.display = "block";
+    }
+  </script>
+</body>
+</html>
